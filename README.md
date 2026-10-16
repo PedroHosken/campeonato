@@ -1,32 +1,20 @@
-# React + TypeScript + Vite
+# Campeonato de Pelada
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Site de uma página para o campeonato de pelada, com três seções:
 
-Currently, two official plugins are available:
+1. **Regras do campeonato**: formato, tempos de jogo, escala dos goleiros (Vitão e GG), elencos e ordem dos jogos.
+2. **Monte seu elenco ideal**: escolha o time, um esquema e arraste os jogadores pela quadra.
+3. **Bolão**: palpite de placar para cada jogo, com a classificação e a final previstas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Os palpites e as escalações ficam salvos no navegador de cada pessoa e podem ser enviados pelo WhatsApp ou copiados.
 
-## React Compiler
+## Rodando
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # checagem de tipos + build de produção
+npm run lint
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Times, jogos e goleiros ficam em [`src/data.ts`](src/data.ts).
